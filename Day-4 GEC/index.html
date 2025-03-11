@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Execution Context</title>
+</head>
+<body>
+    <h1>Global Execution Context</h1>
+    <p>Global Execution Context is the default or base execution context in which JavaScript code is executed. It is created when the JavaScript engine starts to execute the code and is destroyed when the code execution is completed.</p>
+    <p>It consists of two components:</p>
+    <ul>
+        <li>Global Object</li>
+        <li>Global Scope</li>
+    </ul>
+    <p>Global Object: It is the top-level object in a JavaScript environment. In the browser, it is the window object. In Node.js, it is the global object.</p>
+    <p>Global Scope: It is the outermost scope in which all the variables and functions are declared. Any variable or function declared in the global scope is accessible from anywhere in the code.</p>
+    <p>Example of Global Scope</p>
+    <pre>
+        <code>
+            var a = 10;
+            function test(){
+                console.log(a);
+            }
+            test();
+        </code>
+    </pre>
+    <p>Example of Local Scope</p>
+    <pre>
+        <code>
+            function test(){
+                var a = 10;
+                console.log(a);
+            }
+            test();
+        </code>
+    </pre>
+    <p>Example of Local Scope</p>
+    <pre>
+        <code>
+            function test(){
+                var a = 10;
+                console.log(a);
+            }
+            test();
+            console.log(a);
+        </code>
+    </pre>
+    
+    <script src="script.js"></script>
+</body>
+</html>

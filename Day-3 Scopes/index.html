@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scopes in JS</title>
+</head>
+<body>
+    <p>Scope is define the visibility or accessibility of variable </p>
+    <p>There are two types of scope in JS</p>
+    <ul>
+        <li>Global Scope</li>
+        <li>Local Scope</li>
+    </ul>
+    <p>Global Scope: Variable declared outside of function is called global scope</p>
+    <p>Local Scope: Variable declared inside of function is called local scope</p>
+    <p>Example of Global Scope</p>
+    <pre>
+        <code>
+            var a = 10;
+            function test(){
+                console.log(a);
+            }
+            test();
+        </code>
+    </pre>
+    <p>Example of Local Scope</p>
+    <pre>
+        <code>
+            function test(){
+                var a = 10;
+                console.log(a);
+            }
+            test();
+        </code>
+    </pre>
+    <p>Example of Local Scope</p>
+    <pre>
+        <code>
+            function test(){
+                var a = 10;
+                console.log(a);
+            }
+            test();
+            console.log(a);
+        </code>
+    </pre>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
