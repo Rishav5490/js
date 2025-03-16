@@ -78,3 +78,37 @@
 // }
 // console.log(Duplicate("Hellow", )); //["H", "e", "l", "o", "w"]
 // console.log(Duplicate("Rishavv")); //["R", "i", "s", "h", "a", "v"]
+
+//! Find the Factorial of a Number
+// function factorial(num){
+//     let fact = 1;
+//     for(let i=1; i<=num; i++){
+//         fact *= i;
+//     }
+//     return fact;
+// }
+// console.log(factorial(5)); //120
+
+//! Find the Fibonacci Series
+// function fibonacci(n){
+//     let arr = [0,1];
+//     for(let i=2; i<n; i++){
+//         arr.push(arr[i-1]+arr[i-2]);
+//     }
+//     return arr;
+// }
+// console.log(fibonacci(10)); //[0,1,1,2,3,5,8,13,21,34]
+
+//! Find the Longest Word in a Sentence
+// function longestWord(sentence){  
+//     let arr = sentence.split(" ");
+//     let longest = arr[0];
+//     for(let i=1; i<arr.length; i++){
+//         if(arr[i].length > longest.length){
+//             longest = arr[i];
+//         }
+//     }
+//     return longest;
+// }
+// console.log(longestWord("I am a Developer")); //Developer
+
