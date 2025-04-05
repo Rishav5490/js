@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    ul {
+      margin-top: 20px;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 8px;
+      background-color: #f0f0f0;
+      margin-bottom: 5px;
+      border-radius: 4px;
+    }
+
+    li.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Live Search Bar</h2>
+  <input type="text" id="searchInput" placeholder="Search..." onkeyup="liveSearch()" />
+
+  <ul id="resultsList">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Cherry</li>
+    <li>Date</li>
+    <li>Grapes</li>
+    <li>Kiwi</li>
+    <li>Mango</li>
+    <li>Orange</li>
+    <li>Pineapple</li>
+    <li>Watermelon</li>
+  </ul>
+
+  <script>
+    function liveSearch() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const items = document.querySelectorAll('#resultsList li');
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.classList.toggle('hidden', !text.includes(input));
+      });
+    }
+  </script>
+
+</body>
+</html>

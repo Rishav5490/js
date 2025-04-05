@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Real-Time Progress Bar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+    }
+
+    #progressContainer {
+      width: 80%;
+      height: 30px;
+      background-color: #f3f3f3;
+      border-radius: 5px;
+      margin: 20px auto;
+      overflow: hidden;
+      box-shadow: inset 0 0 5px #ccc;
+    }
+
+    #progressBar {
+      height: 100%;
+      width: 0%;
+      background-color: dodgerblue;
+      transition: width 0.2s;
+    }
+
+    #progressText {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Real-Time Progress Bar</h2>
+  <div id="progressContainer">
+    <div id="progressBar"></div>
+  </div>
+  <div id="progressText">0%</div>
+  <button onclick="startProgress()">Start Task</button>
+
+  <script>
+    function startProgress() {
+      const bar = document.getElementById('progressBar');
+      const text = document.getElementById('progressText');
+      let progress = 0;
+
+      const interval = setInterval(() => {
+        if (progress >= 100) {
+          clearInterval(interval);
+          text.textContent = "Task Completed!";
+          return;
+        }
+
+        progress += 1;
+        bar.style.width = progress + "%";
+        text.textContent = progress + "%";
+      }, 100); // speed: 100ms per 1% = 10 seconds total
+    }
+  </script>
+
+</body>
+</html>

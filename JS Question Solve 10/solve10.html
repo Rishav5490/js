@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scroll Progress Bar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Progress bar at top */
+    #scrollProgress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background-color: dodgerblue;
+      width: 0%;
+      z-index: 9999;
+      transition: width 0.1s ease;
+    }
+
+    .content {
+      padding: 20px;
+      max-width: 800px;
+      margin: 50px auto;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="scrollProgress"></div>
+
+  <div class="content">
+    <h1>Scroll Down to See the Progress Bar</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt, massa at ultrices eleifend, 
+      arcu neque accumsan purus, at suscipit tortor nisi a sapien. Fusce efficitur nulla nec sem tempor, 
+      at ultrices lorem cursus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    </p>
+    <!-- Repeat text for scrollable effect -->
+    <p>
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, 
+      eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    </p>
+    <p>
+      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos 
+      qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet...
+    </p>
+    <!-- Add more content to make scrolling obvious -->
+    <p>
+      (Keep repeating or add more content as needed...)
+    </p>
+  </div>
+
+  <script>
+    window.onscroll = function () {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (scrollTop / scrollHeight) * 100;
+      document.getElementById('scrollProgress').style.width = scrolled + '%';
+    };
+  </script>
+
+</body>
+</html>

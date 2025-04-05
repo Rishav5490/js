@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      text-align: center;
+    }
+    #timer {
+      font-size: 48px;
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Countdown Timer</h2>
+  <div id="timer">00:00</div>
+  <button onclick="startCountdown()">Start Countdown</button>
+
+  <script>
+    let countdown;
+    function startCountdown() {
+      clearInterval(countdown); // clear any existing countdown
+
+      let timeInSeconds = 60; // Set your desired time in seconds here
+      const timerDisplay = document.getElementById('timer');
+
+      function updateDisplay() {
+        const minutes = String(Math.floor(timeInSeconds / 60)).padStart(2, '0');
+        const seconds = String(timeInSeconds % 60).padStart(2, '0');
+        timerDisplay.textContent = `${minutes}:${seconds}`;
+      }
+
+      updateDisplay(); // initial display
+      countdown = setInterval(() => {
+        timeInSeconds--;
+        updateDisplay();
+
+        if (timeInSeconds <= 0) {
+          clearInterval(countdown);
+          timerDisplay.textContent = "Time's up!";
+        }
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>

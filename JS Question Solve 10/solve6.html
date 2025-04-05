@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabbed Interface</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-size: 16px;
+    }
+
+    .tab.active {
+      border-bottom: 3px solid dodgerblue;
+      font-weight: bold;
+      color: dodgerblue;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px 0;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Tabbed Interface</h2>
+
+  <div class="tabs">
+    <button class="tab active" onclick="openTab(event, 'home')">Home</button>
+    <button class="tab" onclick="openTab(event, 'about')">About</button>
+    <button class="tab" onclick="openTab(event, 'contact')">Contact</button>
+  </div>
+
+  <div id="home" class="tab-content active">
+    <h3>Welcome to Home</h3>
+    <p>This is the home section content.</p>
+  </div>
+
+  <div id="about" class="tab-content">
+    <h3>About Us</h3>
+    <p>This is the about section content.</p>
+  </div>
+
+  <div id="contact" class="tab-content">
+    <h3>Contact Info</h3>
+    <p>This is the contact section content.</p>
+  </div>
+
+  <script>
+    function openTab(evt, tabId) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.tab-content');
+
+      // Remove 'active' from all tabs and content
+      tabs.forEach(tab => tab.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
+
+      // Add 'active' to selected tab and content
+      evt.currentTarget.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
